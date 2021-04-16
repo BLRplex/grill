@@ -44,7 +44,6 @@ const GrillSurface = () => {
                 x={item.x * aspectRatio}
                 width={item.width * aspectRatio}
                 height={item.height * aspectRatio}
-                alt="asd"
               />
             </g>
           );

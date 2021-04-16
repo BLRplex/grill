@@ -26,7 +26,6 @@ const GrillSurface = () => {
     setContainerWidth(el.clientWidth)
   }
 
-  console.log('aspectRatio', aspectRatio)
   return (
     <div id="grill-surface-wrapper">
       <svg

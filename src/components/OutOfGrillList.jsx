@@ -30,7 +30,7 @@ const OutOfGrillList = () => {
             {outOfGrillItems.map((element) => {
               return (
                 <tr
-                  key={`${element.item.title}-${element.x}-${element.y}.${element.bin}`}
+                  key={`${element.x}-${element.y}`}
                 >
                   <td>{element.item.title}</td>
                   <td>{element.width} x {element.height}</td>

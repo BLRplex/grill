@@ -28,17 +28,3 @@ export const extractGrillItems = (grillItems) => {
       }#${pushIndexRegistry(element.title)}`
     }));
 };
-
-export const createGrillItemsMap = (items) => {
-  return items.reduce((acc, value) => {
-    const cutName = (value.id || "").replace(/#\d+$/, "");
-
-    if (!(cutName in acc)) {
-      acc[cutName] = 0;
-    }
-
-    acc[cutName] += 1;
-
-    return acc;
-  }, {});
-};

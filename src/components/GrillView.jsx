@@ -7,7 +7,7 @@ import JSONInput from "./JSONInput";
 
 const Grill = () => {
   return (
-    <Container>
+    <Container style={{ marginTop: 32 }}>
       <Row>
         <Col md={8}>
           <GrillSurface />

@@ -32,7 +32,7 @@ export const updateGrill = (root) => {
   return async (dispatch) => {
     try {
       const {
-        grill: { width, height, grillItems }
+        grill: { width = 500, height = 200, grillItems = [] } = {}
       } = root;
       const extractedGrillItems = extractGrillItems(grillItems);
 

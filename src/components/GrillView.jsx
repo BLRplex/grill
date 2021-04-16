@@ -11,14 +11,10 @@ const Grill = () => {
       <Row>
         <Col md={8}>
           <GrillSurface />
+          <JSONInput />
         </Col>
         <Col md={4}>
           <OutOfGrillList />
-        </Col>
-      </Row>
-      <Row>
-        <Col md={8}>
-          <JSONInput />
         </Col>
       </Row>
     </Container>

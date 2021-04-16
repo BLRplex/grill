@@ -1,6 +1,5 @@
-import ShelfPack from "@mapbox/shelf-pack";
 import { packer, SortStrategy, SelectionStrategy } from "guillotine-packer";
-import { extractGrillItems } from "./utils/grill.js";
+import { extractGrillItems, packGrillItems } from "./utils/grill.js";
 
 export const UPDATE_GRILL = "@/UPDATE_GRIPP";
 export const SET_GRILL_ITEMS = "@/SET_GRILL_ITEMS";
@@ -35,16 +34,7 @@ export const updateGrill = (root) => {
         grill: { width = 500, height = 200, grillItems = [] } = {}
       } = root;
       const extractedGrillItems = extractGrillItems(grillItems);
-
-      const [packedItems, notPackedItems] = packer({
-        binWidth: width,
-        binHeight: height,
-        items: extractedGrillItems,
-      },{
-        allowRotation: false,
-        sortStrategy: SortStrategy.Ratio,
-        selectionStrategy: SelectionStrategy.BEST_LONG_SIDE_FIT,
-      })
+      const [packedItems, notPackedItems] = packGrillItems(width, height, extractedGrillItems)
 
       dispatch(setGrillSize(width, height));
       dispatch(setGrillItems(packedItems || []));
